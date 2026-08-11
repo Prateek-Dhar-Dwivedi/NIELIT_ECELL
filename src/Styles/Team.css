@@ -1,0 +1,334 @@
+.team-section {
+  background: var(--next-charcoal);
+  color: var(--next-white);
+  overflow: hidden;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.team-heading {
+  margin-bottom: 90px;
+}
+
+.team-title-row {
+  display: grid;
+
+  grid-template-columns: 1fr 0.4fr;
+
+  gap: 80px;
+
+  align-items: end;
+}
+
+.team-title-row h2 {
+  max-width: 800px;
+
+  font-size: clamp(
+    55px,
+    7vw,
+    100px
+  );
+
+  line-height: 0.9;
+
+  letter-spacing: -5px;
+
+  font-weight: 800;
+}
+
+.team-title-row h2 span {
+  display: block;
+
+  color: transparent;
+
+  -webkit-text-stroke:
+    1.5px var(--next-white);
+}
+
+.team-title-row p {
+  max-width: 400px;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: var(--next-silver);
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.team-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  column-gap: 25px;
+
+  row-gap: 70px;
+}
+
+
+/* =========================
+   MEMBER
+========================= */
+
+.team-member {
+  min-width: 0;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.team-image {
+  position: relative;
+
+  aspect-ratio: 4 / 5;
+
+  overflow: hidden;
+
+  background: var(--next-graphite);
+}
+
+.team-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter: grayscale(100%);
+
+  transform: scale(1.01);
+
+  transition:
+    filter 0.6s ease,
+    transform 0.8s
+      cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.team-member:hover .team-image img {
+  filter: grayscale(0%);
+
+  transform: scale(1.05);
+}
+
+
+/* =========================
+   OVERLAY
+========================= */
+
+.team-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  padding: 22px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.6),
+      transparent 45%
+    );
+
+  opacity: 0;
+
+  transition:
+    opacity 0.4s ease;
+}
+
+.team-member:hover .team-overlay {
+  opacity: 1;
+}
+
+
+/* =========================
+   SOCIALS
+========================= */
+
+.team-socials {
+  display: flex;
+
+  gap: 8px;
+}
+
+.team-socials a {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.5);
+
+  border-radius: 50%;
+
+  color: var(--next-white);
+
+  background:
+    rgba(0, 0, 0, 0.2);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.team-socials a:hover {
+  background: var(--next-gold);
+
+  color: var(--next-charcoal);
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================
+   ARROW
+========================= */
+
+.team-profile-arrow {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.5);
+
+  border-radius: 50%;
+
+  color: var(--next-white);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.4s ease;
+}
+
+.team-member:hover .team-profile-arrow {
+  background: var(--next-gold);
+
+  color: var(--next-charcoal);
+
+  transform: rotate(45deg);
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.team-info {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  gap: 20px;
+
+  padding-top: 20px;
+}
+
+.team-info h3 {
+  font-size: 24px;
+
+  line-height: 1;
+
+  letter-spacing: -0.8px;
+
+  font-weight: 600;
+}
+
+.team-info p {
+  margin-top: 8px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+
+  color: var(--next-gold);
+}
+
+.team-info > span {
+  font-size: 11px;
+
+  color: var(--next-slate);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .team-title-row {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .team-title-row p {
+    max-width: 600px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .team-heading {
+    margin-bottom: 55px;
+  }
+
+  .team-title-row h2 {
+    font-size: 50px;
+
+    letter-spacing: -3px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+
+    row-gap: 55px;
+  }
+
+  .team-info h3 {
+    font-size: 21px;
+  }
+
+  .team-image {
+    aspect-ratio: 4 / 5;
+  }
+
+}

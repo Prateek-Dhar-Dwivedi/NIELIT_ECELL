@@ -1,0 +1,56 @@
+:root {
+  /* =========================
+     N.E.X.T. BRAND COLORS
+  ========================= */
+
+  --next-charcoal: #292A2D;
+  --next-graphite: #3F4145;
+  --next-slate: #686A6E;
+  --next-silver: #A6A7A8;
+
+  /* =========================
+     BACKGROUNDS
+  ========================= */
+
+  --next-off-white: #F7F7F5;
+  --next-white: #FFFFFF;
+
+  /* =========================
+     ACCENT
+  ========================= */
+
+  --next-gold: #C9A227;
+
+  /* =========================
+     TYPOGRAPHY
+  ========================= */
+
+  --font-main: "Inter", sans-serif;
+
+  /* =========================
+     LAYOUT
+  ========================= */
+
+  --container-width: 1280px;
+
+  --section-padding-desktop: 120px;
+  --section-padding-tablet: 90px;
+  --section-padding-mobile: 70px;
+
+  /* =========================
+     BORDER RADIUS
+  ========================= */
+
+  --radius-small: 8px;
+  --radius-medium: 16px;
+  --radius-large: 24px;
+  --radius-pill: 999px;
+
+  /* =========================
+     MOTION
+  ========================= */
+
+  --transition-fast: 0.25s ease;
+  --transition-medium: 0.5s ease;
+  --transition-slow: 0.8s ease;
+}

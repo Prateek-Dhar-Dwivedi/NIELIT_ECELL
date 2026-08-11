@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@import "./Variables.css";
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   HTML / BODY
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+
+  background: var(--next-off-white);
+  color: var(--next-charcoal);
+
+  overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+  width: min(
+    calc(100% - 48px),
+    var(--container-width)
+  );
+
+  margin: 0 auto;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+section {
+  padding: var(--section-padding-desktop) 0;
+}
+
+
+/* =========================
+   SELECTION
+========================= */
+
+::selection {
+  background: var(--next-gold);
+  color: var(--next-charcoal);
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--next-off-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--next-graphite);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--next-gold);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+
+  section {
+    padding: var(--section-padding-tablet) 0;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .container {
+    width: min(
+      calc(100% - 32px),
+      var(--container-width)
+    );
+  }
+
+  section {
+    padding: var(--section-padding-mobile) 0;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .container {
+    width: calc(100% - 28px);
+  }
+
+}

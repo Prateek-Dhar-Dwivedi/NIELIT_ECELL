@@ -1,0 +1,350 @@
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-section {
+  position: relative;
+
+  background: var(--next-charcoal);
+
+  color: var(--next-white);
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.about-container {
+  position: relative;
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.about-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-bottom: 70px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.about-label span:first-child {
+  color: var(--next-gold);
+}
+
+.about-label span:last-child {
+  color: var(--next-silver);
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.about-content {
+  display: grid;
+
+  grid-template-columns:
+    1.15fr 0.85fr;
+
+  gap: 90px;
+
+  align-items: start;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.about-content h2 {
+  max-width: 800px;
+
+  margin: 0;
+
+  font-size: clamp(
+    44px,
+    5vw,
+    76px
+  );
+
+  line-height: 0.98;
+
+  letter-spacing: -3px;
+
+  font-weight: 700;
+}
+
+.about-content h2 span {
+  display: block;
+
+  color: var(--next-silver);
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.about-description {
+  max-width: 480px;
+}
+
+.about-description p {
+  margin: 0 0 22px;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  color: var(--next-silver);
+}
+
+
+/* =========================
+   LINK
+========================= */
+
+.about-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 18px;
+
+  padding-bottom: 8px;
+
+  border-bottom: 1px solid
+    var(--next-gold);
+
+  color: var(--next-white);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  transition:
+    color 0.3s ease,
+    gap 0.3s ease;
+}
+
+.about-link:hover {
+  color: var(--next-gold);
+
+  gap: 14px;
+}
+
+
+/* =========================
+   VISUAL
+========================= */
+
+.about-visual {
+  position: relative;
+
+  min-height: 360px;
+
+  margin-top: 70px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* =========================
+   VISUAL INNER
+========================= */
+
+.about-visual-inner {
+  position: relative;
+
+  width: 430px;
+
+  height: 430px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.about-grid {
+  position: absolute;
+
+  width: 330px;
+
+  height: 330px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  grid-template-rows:
+    repeat(2, 1fr);
+
+  transform: rotate(45deg);
+}
+
+
+/* Grid lines */
+
+.about-grid span {
+  border: 1px solid
+    rgba(255, 255, 255, 0.14);
+}
+
+
+/* Gold geometry */
+
+.about-grid span:nth-child(2),
+.about-grid span:nth-child(3) {
+  border-color:
+    rgba(201, 162, 39, 0.5);
+}
+
+
+/* =========================
+   CENTER MARK
+========================= */
+
+.about-center-mark {
+  position: relative;
+
+  z-index: 2;
+
+  width: 150px;
+
+  height: 150px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid
+    var(--next-gold);
+
+  border-radius: 50%;
+
+  background:
+    var(--next-charcoal);
+
+  color: var(--next-white);
+
+  font-size: 17px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .about-content {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+
+  .about-description {
+    max-width: 650px;
+  }
+
+
+  .about-visual {
+    margin-top: 30px;
+
+    min-height: 360px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .about-label {
+    margin-bottom: 45px;
+  }
+
+
+  .about-content h2 {
+    font-size: 43px;
+
+    letter-spacing: -2px;
+  }
+
+
+  .about-description p {
+    font-size: 15px;
+  }
+
+
+  .about-visual {
+    min-height: 280px;
+
+    margin-top: 20px;
+  }
+
+
+  .about-visual-inner {
+    width: 300px;
+
+    height: 300px;
+  }
+
+
+  .about-grid {
+    width: 240px;
+
+    height: 240px;
+  }
+
+
+  .about-center-mark {
+    width: 115px;
+
+    height: 115px;
+
+    font-size: 14px;
+  }
+
+}

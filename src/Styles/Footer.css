@@ -1,0 +1,315 @@
+.footer {
+  background: var(--next-charcoal);
+  color: var(--next-white);
+
+  padding-top: 120px;
+  padding-bottom: 30px;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.footer-main {
+  display: grid;
+
+  grid-template-columns:
+    1.4fr
+    0.5fr
+    0.7fr;
+
+  gap: 80px;
+
+  padding-bottom: 100px;
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================
+   BRAND
+========================= */
+
+.footer-brand h2 {
+  max-width: 650px;
+
+  margin: 30px 0;
+
+  font-size: clamp(
+    55px,
+    7vw,
+    100px
+  );
+
+  line-height: 0.85;
+
+  letter-spacing: -5px;
+
+  font-weight: 800;
+}
+
+.footer-brand h2 span {
+  display: block;
+
+  color: var(--next-gold);
+}
+
+.footer-description {
+  max-width: 480px;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  color: var(--next-silver);
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.footer-label {
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  color: var(--next-gold);
+}
+
+
+/* =========================
+   NAV
+========================= */
+
+.footer-nav {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 13px;
+}
+
+.footer-nav .footer-label {
+  margin-bottom: 18px;
+}
+
+.footer-nav a {
+  width: fit-content;
+
+  color: var(--next-silver);
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--next-white);
+
+  transform: translateX(5px);
+}
+
+
+/* =========================
+   CONNECT
+========================= */
+
+.footer-connect {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.footer-connect .footer-label {
+  margin-bottom: 18px;
+}
+
+.footer-connect a {
+  display: grid;
+
+  grid-template-columns:
+    22px
+    1fr
+    20px;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding-bottom: 14px;
+
+  color: var(--next-silver);
+
+  text-decoration: none;
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.1);
+
+  font-size: 13px;
+
+  transition:
+    color 0.3s ease,
+    padding 0.3s ease;
+}
+
+.footer-connect a:hover {
+  color: var(--next-white);
+
+  padding-left: 5px;
+}
+
+.footer-connect a svg:last-child {
+  font-size: 15px;
+}
+
+
+/* =========================
+   BOTTOM
+========================= */
+
+.footer-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding-top: 25px;
+}
+
+.footer-bottom p {
+  font-size: 11px;
+
+  color: var(--next-slate);
+}
+
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+.footer-top {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  background: none;
+
+  border: none;
+
+  color: var(--next-silver);
+
+  cursor: pointer;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.footer-top span {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.25);
+
+  border-radius: 50%;
+
+  font-size: 15px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footer-top:hover span {
+  background: var(--next-gold);
+
+  color: var(--next-charcoal);
+
+  transform: translateY(-4px);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .footer-main {
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 60px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .footer {
+    padding-top: 80px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+
+    padding-bottom: 70px;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-brand h2 {
+    font-size: 52px;
+
+    letter-spacing: -3px;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+}
