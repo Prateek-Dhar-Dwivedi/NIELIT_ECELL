@@ -1,9 +1,18 @@
 import "../Styles/Navbar.css";
+import { useState } from "react";
 
 import collegeLogo from "../Assets/logos/college-logo.png";
 import nextLogo from "../Assets/logos/next-logo.png";
 
 export default function Navbar() {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Close mobile menu
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
 
@@ -13,7 +22,11 @@ export default function Navbar() {
             LOGO AREA
         ========================= */}
 
-        <a href="#home" className="navbar-brand">
+        <a
+          href="#home"
+          className="navbar-brand"
+          onClick={closeMenu}
+        >
 
           <img
             src={collegeLogo}
@@ -33,44 +46,48 @@ export default function Navbar() {
 
 
         {/* =========================
-            DESKTOP NAVIGATION
+            NAVIGATION
         ========================= */}
 
-        <div className="navbar-links">
+        <div
+          className={`navbar-links ${
+            menuOpen ? "navbar-links-active" : ""
+          }`}
+        >
 
-          <a href="#home">
+          <a href="#home" onClick={closeMenu}>
             Home
           </a>
 
-          <a href="#about">
+          <a href="#about" onClick={closeMenu}>
             About
           </a>
 
-          <a href="#vision">
+          <a href="#vision" onClick={closeMenu}>
             Vision
           </a>
 
-          <a href="#what-we-do">
+          <a href="#what-we-do" onClick={closeMenu}>
             What We Do
           </a>
 
-          <a href="#impact">
+          <a href="#impact" onClick={closeMenu}>
             Impact
           </a>
 
-          <a href="#activities">
+          <a href="#activities" onClick={closeMenu}>
             Events
           </a>
 
-          <a href="#team">
+          <a href="#team" onClick={closeMenu}>
             Team
           </a>
 
-          <a href="#gallery">
+          <a href="#gallery" onClick={closeMenu}>
             Gallery
           </a>
 
-          <a href="#contact">
+          <a href="#contact" onClick={closeMenu}>
             Contact
           </a>
 
@@ -82,12 +99,18 @@ export default function Navbar() {
         ========================= */}
 
         <button
-          className="navbar-menu"
+          className={`navbar-menu ${
+            menuOpen ? "open" : ""
+          }`}
           type="button"
-          aria-label="Open navigation menu"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
         >
+
           <span></span>
           <span></span>
+
         </button>
 
       </div>

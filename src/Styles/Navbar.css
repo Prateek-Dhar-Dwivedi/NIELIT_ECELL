@@ -4,7 +4,6 @@
 
 .navbar {
   position: fixed;
-
   top: 0;
   left: 0;
 
@@ -17,10 +16,8 @@
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 
-  border-bottom: 1px solid
-    rgba(41, 42, 45, 0.08);
+  border-bottom: 1px solid rgba(41, 42, 45, 0.08);
 }
-
 
 /* =========================
    CONTAINER
@@ -42,7 +39,6 @@
   gap: 40px;
 }
 
-
 /* =========================
    BRAND
 ========================= */
@@ -59,7 +55,6 @@
   text-decoration: none;
 }
 
-
 /* =========================
    COLLEGE LOGO
 ========================= */
@@ -72,7 +67,6 @@
 
   display: block;
 }
-
 
 /* =========================
    DIVIDER
@@ -87,7 +81,6 @@
   flex-shrink: 0;
 }
 
-
 /* =========================
    N.E.X.T. LOGO
 ========================= */
@@ -101,9 +94,8 @@
   display: block;
 }
 
-
 /* =========================
-   NAVIGATION
+   DESKTOP NAVIGATION
 ========================= */
 
 .navbar-links {
@@ -117,7 +109,6 @@
 
   margin-left: auto;
 }
-
 
 /* =========================
    NAV LINKS
@@ -138,10 +129,8 @@
 
   white-space: nowrap;
 
-  transition:
-    color 0.3s ease;
+  transition: color 0.3s ease;
 }
-
 
 /* Underline */
 
@@ -167,7 +156,6 @@
     cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-
 /* Hover */
 
 .navbar-links a:hover {
@@ -179,7 +167,6 @@
 
   transform-origin: left;
 }
-
 
 /* =========================
    MOBILE MENU BUTTON
@@ -193,8 +180,7 @@
 
   padding: 0;
 
-  border: 1px solid
-    rgba(41, 42, 45, 0.2);
+  border: 1px solid rgba(41, 42, 45, 0.2);
 
   border-radius: 50%;
 
@@ -211,8 +197,11 @@
   flex-direction: column;
 
   gap: 5px;
-}
 
+  position: relative;
+
+  z-index: 1100;
+}
 
 /* Hamburger lines */
 
@@ -225,9 +214,21 @@
   background: var(--next-charcoal);
 
   transition:
-    transform 0.3s ease;
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
+/* =========================
+   HAMBURGER OPEN STATE
+========================= */
+
+.navbar-menu.open span:first-child {
+  transform: translateY(3.25px) rotate(45deg);
+}
+
+.navbar-menu.open span:last-child {
+  transform: translateY(-3.25px) rotate(-45deg);
+}
 
 /* =========================
    TABLET
@@ -254,9 +255,7 @@
   .next-logo {
     width: 82px;
   }
-
 }
-
 
 /* =========================
    SMALL TABLET
@@ -283,9 +282,7 @@
   .next-logo {
     width: 75px;
   }
-
 }
-
 
 /* =========================
    MOBILE
@@ -299,40 +296,115 @@
     width: 92%;
   }
 
+  /* Hide desktop links initially */
 
   .navbar-links {
+    position: fixed;
+
+    top: 76px;
+    left: 0;
+
+    width: 100%;
+
+    padding: 30px 6% 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 0;
+
+    margin: 0;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid rgba(41, 42, 45, 0.1);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+
+    transform: translateY(-120%);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+
+    z-index: 1050;
+  }
+
+  /* OPEN MOBILE MENU */
+
+  .navbar-links-active {
+    transform: translateY(0);
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+  }
+
+  /* Mobile links */
+
+  .navbar-links a {
+    width: 100%;
+
+    padding: 15px 0;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    border-bottom: 1px solid rgba(41, 42, 45, 0.08);
+  }
+
+  .navbar-links a:last-child {
+    border-bottom: none;
+  }
+
+  .navbar-links a::after {
     display: none;
   }
 
+  .navbar-links a:hover {
+    color: var(--next-gold);
+  }
+
+  /* Hamburger */
 
   .navbar-menu {
     display: flex;
   }
-
 
   .college-logo {
     width: 85px;
     height: 55px;
   }
 
-
   .next-logo {
     width: 75px;
     height: 55px;
   }
 
-
   .logo-divider {
     height: 38px;
   }
 
-
   .navbar-brand {
     gap: 12px;
   }
-
 }
-
 
 /* =========================
    SMALL MOBILE
@@ -344,32 +416,33 @@
     width: 90%;
   }
 
-
   .navbar-brand {
     gap: 9px;
   }
-
 
   .college-logo {
     width: 75px;
     height: 50px;
   }
 
-
   .next-logo {
     width: 68px;
     height: 50px;
   }
 
-
   .logo-divider {
     height: 34px;
   }
-
 
   .navbar-menu {
     width: 42px;
     height: 42px;
   }
 
+  .navbar-links {
+    top: 76px;
+
+    padding-left: 7%;
+    padding-right: 7%;
+  }
 }
