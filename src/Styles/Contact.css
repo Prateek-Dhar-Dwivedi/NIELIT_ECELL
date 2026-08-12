@@ -268,3 +268,17 @@
   }
 
 }
+
+.contact-social-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.contact-social-link:hover {
+  color: inherit;
+}
+
+.contact-social-link p {
+  transition: color 0.3s ease;
+}

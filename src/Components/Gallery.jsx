@@ -1,27 +1,33 @@
 import { motion } from "framer-motion";
+
 import "../Styles/Gallery.css";
+
+import gallery1 from "../Assets/Images/IMG_9417.JPG.jpeg";
+import gallery2 from "../Assets/Images/IMG_9415.JPG.jpeg";
+import gallery3 from "../Assets/Images/IMG_9412.JPG.jpeg";
+import gallery4 from "../Assets/Images/IMG_9413.JPG.jpeg";
 
 const galleryItems = [
   {
-    image: "/gallery-1.jpg",
+    image: gallery1,
     title: "Building Ideas",
     category: "EVENTS",
     size: "large",
   },
   {
-    image: "/gallery-2.jpg",
+    image: gallery2,
     title: "Learning Together",
     category: "WORKSHOPS",
     size: "small",
   },
   {
-    image: "/gallery-3.jpg",
+    image: gallery3,
     title: "Ideas in Action",
     category: "ACTIVITIES",
     size: "small",
   },
   {
-    image: "/gallery-4.jpg",
+    image: gallery4,
     title: "Connecting Minds",
     category: "NETWORKING",
     size: "large",
@@ -38,8 +44,14 @@ export default function Gallery() {
 
         <motion.div
           className="gallery-heading"
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{
+            opacity: 0,
+            y: 35,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
           viewport={{
             once: true,
             amount: 0.25,
@@ -108,6 +120,7 @@ export default function Gallery() {
               <div className="gallery-overlay">
 
                 <div>
+
                   <span>
                     {item.category}
                   </span>
@@ -115,6 +128,7 @@ export default function Gallery() {
                   <h3>
                     {item.title}
                   </h3>
+
                 </div>
 
               </div>

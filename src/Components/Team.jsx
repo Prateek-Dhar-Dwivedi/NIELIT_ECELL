@@ -7,26 +7,32 @@ import {
 
 import "../Styles/Team.css";
 
+import presidentImage from "../Assets/Images/Rudransh_Garg_President.jpeg";
+import vicePresidentImage from "../Assets/Images/Disha_Saini_Vice President.jpeg";
+import coreTeamImage from "../Assets/Images/IMG_9416.JPG.jpeg";
+
 const team = [
   {
-    name: "Member Name",
+    name: "Rudransh Garg",
     role: "President",
-    image: "/team-placeholder.jpg",
+    image: presidentImage,
+    linkedin: "https://www.linkedin.com/in/rudranshgarg2105/",
+    instagram: "https://www.instagram.com/rudranshgarg_21/",
+    isCoreTeam: false,
   },
   {
-    name: "Member Name",
+    name: "Disha Saini",
     role: "Vice President",
-    image: "/team-placeholder.jpg",
+    image: vicePresidentImage,
+    linkedin: "https://www.linkedin.com/in/disha-saini-973183343/",
+    instagram: "https://www.instagram.com/rudranshgarg_21/",
+    isCoreTeam: false,
   },
   {
-    name: "Member Name",
-    role: "General Secretary",
-    image: "/team-placeholder.jpg",
-  },
-  {
-    name: "Member Name",
-    role: "Core Team",
-    image: "/team-placeholder.jpg",
+    name: "Core Team",
+    role: "The people who turn ideas into action.",
+    image: coreTeamImage,
+    isCoreTeam: true,
   },
 ];
 
@@ -36,7 +42,9 @@ export default function Team() {
 
       <div className="container">
 
-        {/* Heading */}
+        {/* =========================
+            HEADING
+        ========================= */}
 
         <motion.div
           className="team-heading"
@@ -80,34 +88,44 @@ export default function Team() {
         </motion.div>
 
 
-        {/* Team */}
+        {/* =========================
+            TEAM
+        ========================= */}
 
         <div className="team-grid">
 
           {team.map((member, index) => (
 
             <motion.article
-              className="team-member"
+              className={`team-member ${
+                member.isCoreTeam ? "core-team-member" : ""
+              }`}
               key={`${member.name}-${index}`}
+
               initial={{
                 opacity: 0,
                 y: 50
               }}
+
               whileInView={{
                 opacity: 1,
                 y: 0
               }}
+
               viewport={{
                 once: true,
                 amount: 0.15
               }}
+
               transition={{
                 duration: 0.7,
                 delay: index * 0.1
               }}
             >
 
-              {/* Image */}
+              {/* =========================
+                  IMAGE
+              ========================= */}
 
               <div className="team-image">
 
@@ -116,36 +134,48 @@ export default function Team() {
                   alt={member.name}
                 />
 
-                <div className="team-overlay">
+                {/* Social icons only for individual members */}
 
-                  <div className="team-socials">
+                {!member.isCoreTeam && (
+                  <div className="team-overlay">
 
-                    <a
-                      href="#linkedin"
-                      aria-label={`${member.name} LinkedIn`}
-                    >
-                      <FiLinkedin />
-                    </a>
+                    <div className="team-socials">
 
-                    <a
-                      href="#instagram"
-                      aria-label={`${member.name} Instagram`}
-                    >
-                      <FiInstagram />
-                    </a>
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${member.name} LinkedIn`}
+                      >
+                        <FiLinkedin />
+                      </a>
+
+                      {member.instagram !== "YOUR_INSTAGRAM" && (
+                        <a
+                          href={member.instagram}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${member.name} Instagram`}
+                        >
+                          <FiInstagram />
+                        </a>
+                      )}
+
+                    </div>
+
+                    <div className="team-profile-arrow">
+                      <FiArrowUpRight />
+                    </div>
 
                   </div>
-
-                  <div className="team-profile-arrow">
-                    <FiArrowUpRight />
-                  </div>
-
-                </div>
+                )}
 
               </div>
 
 
-              {/* Information */}
+              {/* =========================
+                  INFORMATION
+              ========================= */}
 
               <div className="team-info">
 

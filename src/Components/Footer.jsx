@@ -20,9 +20,15 @@ export default function Footer() {
 
       <div className="container">
 
-        {/* Main footer */}
+        {/* =========================
+            MAIN FOOTER
+        ========================= */}
 
         <div className="footer-main">
+
+          {/* =========================
+              BRAND
+          ========================= */}
 
           <div className="footer-brand">
 
@@ -45,7 +51,9 @@ export default function Footer() {
           </div>
 
 
-          {/* Navigation */}
+          {/* =========================
+              NAVIGATION
+          ========================= */}
 
           <div className="footer-nav">
 
@@ -65,7 +73,9 @@ export default function Footer() {
           </div>
 
 
-          {/* Connect */}
+          {/* =========================
+              CONNECT
+          ========================= */}
 
           <div className="footer-connect">
 
@@ -73,22 +83,57 @@ export default function Footer() {
               CONNECT
             </p>
 
-            <a href="mailto:ecell@college.edu">
+
+            {/* EMAIL */}
+
+            <a href="mailto:ecell.nielitrpr@gmail.com">
+
               <FiMail />
-              <span>Email</span>
+
+              <span>
+                Email
+              </span>
+
               <FiArrowUpRight />
+
             </a>
 
-            <a href="#instagram">
+
+            {/* INSTAGRAM */}
+
+            <a
+              href="https://www.instagram.com/ecell.nielitrpr/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
               <FiInstagram />
-              <span>Instagram</span>
+
+              <span>
+                Instagram
+              </span>
+
               <FiArrowUpRight />
+
             </a>
 
-            <a href="#linkedin">
+
+            {/* LINKEDIN */}
+
+            <a
+              href="https://www.linkedin.com/company/next-ecell-ndu/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
               <FiLinkedin />
-              <span>LinkedIn</span>
+
+              <span>
+                LinkedIn
+              </span>
+
               <FiArrowUpRight />
+
             </a>
 
           </div>
@@ -96,7 +141,9 @@ export default function Footer() {
         </div>
 
 
-        {/* Bottom */}
+        {/* =========================
+            BOTTOM
+        ========================= */}
 
         <div className="footer-bottom">
 
@@ -111,9 +158,11 @@ export default function Footer() {
             className="footer-top"
           >
             BACK TO TOP
+
             <span>
               ↑
             </span>
+
           </button>
 
         </div>

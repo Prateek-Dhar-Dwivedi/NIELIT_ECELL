@@ -15,7 +15,9 @@ export default function Contact() {
 
       <div className="container">
 
-        {/* Heading */}
+        {/* =========================
+            HEADING
+        ========================= */}
 
         <motion.div
           className="contact-heading"
@@ -49,11 +51,15 @@ export default function Contact() {
         </motion.div>
 
 
-        {/* Contact content */}
+        {/* =========================
+            CONTACT CONTENT
+        ========================= */}
 
         <div className="contact-content">
 
-          {/* Main CTA */}
+          {/* =========================
+              MAIN CTA
+          ========================= */}
 
           <motion.div
             className="contact-cta"
@@ -81,22 +87,26 @@ export default function Contact() {
             </p>
 
             <a
-              href="mailto:ecell@college.edu"
+              href="mailto:ecell.nielitrpr@gmail.com"
               className="contact-email"
             >
+
               <span>
-                ecell@college.edu
+                ecell.nielitrpr@gmail.com
               </span>
 
               <span className="contact-email-icon">
                 <FiArrowUpRight />
               </span>
+
             </a>
 
           </motion.div>
 
 
-          {/* Information */}
+          {/* =========================
+              CONTACT INFORMATION
+          ========================= */}
 
           <motion.div
             className="contact-info"
@@ -118,6 +128,8 @@ export default function Contact() {
             }}
           >
 
+            {/* EMAIL */}
+
             <div className="contact-info-item">
 
               <div className="contact-info-icon">
@@ -126,11 +138,16 @@ export default function Contact() {
 
               <div>
                 <span>EMAIL</span>
-                <p>ecell@college.edu</p>
+
+                <p>
+                  ecell.nielitrpr@gmail.com
+                </p>
               </div>
 
             </div>
 
+
+            {/* LOCATION */}
 
             <div className="contact-info-item">
 
@@ -140,15 +157,23 @@ export default function Contact() {
 
               <div>
                 <span>LOCATION</span>
+
                 <p>
-                  Your College Campus
+                  NIELIT Ropar Campus
                 </p>
               </div>
 
             </div>
 
 
-            <div className="contact-info-item">
+            {/* INSTAGRAM */}
+
+            <a
+              href="https://www.instagram.com/ecell.nielitrpr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-info-item contact-social-link"
+            >
 
               <div className="contact-info-icon">
                 <FiInstagram />
@@ -156,15 +181,23 @@ export default function Contact() {
 
               <div>
                 <span>INSTAGRAM</span>
+
                 <p>
-                  @ecell
+                  @ecell.nielitrpr
                 </p>
               </div>
 
-            </div>
+            </a>
 
 
-            <div className="contact-info-item">
+            {/* LINKEDIN */}
+
+            <a
+              href="https://www.linkedin.com/company/next-ecell-ndu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-info-item contact-social-link"
+            >
 
               <div className="contact-info-icon">
                 <FiLinkedin />
@@ -172,12 +205,13 @@ export default function Contact() {
 
               <div>
                 <span>LINKEDIN</span>
+
                 <p>
-                  E-Cell
+                  NEXT E-Cell NDU
                 </p>
               </div>
 
-            </div>
+            </a>
 
           </motion.div>
 
