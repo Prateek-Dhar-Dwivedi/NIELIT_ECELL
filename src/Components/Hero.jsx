@@ -136,7 +136,7 @@ export default function Hero() {
 
 
             <motion.h1
-              className="hero-outline"
+              className="hero-outline hero-next"
               initial={{
                 opacity: 0,
                 y: 100,
@@ -151,7 +151,7 @@ export default function Hero() {
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
-              NEXT.
+              N.E.X.T.
             </motion.h1>
 
           </div>

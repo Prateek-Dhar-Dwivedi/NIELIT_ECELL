@@ -92,7 +92,7 @@ export default function Contact() {
             >
 
               <span>
-                ecell.nielitrpr@gmail.com
+                next.ndu@nielit.ac.in
               </span>
 
               <span className="contact-email-icon">
@@ -140,7 +140,7 @@ export default function Contact() {
                 <span>EMAIL</span>
 
                 <p>
-                  ecell.nielitrpr@gmail.com
+                  next.ndu@nielit.ac.in
                 </p>
               </div>
 

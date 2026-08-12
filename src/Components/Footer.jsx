@@ -86,7 +86,7 @@ export default function Footer() {
 
             {/* EMAIL */}
 
-            <a href="mailto:ecell.nielitrpr@gmail.com">
+            <a href="mailto:next.ndu@nielit.ac.in">
 
               <FiMail />
 

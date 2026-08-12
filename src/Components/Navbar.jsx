@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import collegeLogo from "../Assets/logos/college-logo.png";
 import nextLogo from "../Assets/logos/next-logo.png";
+import meityEmblem from "../Assets/logos/meity-emblem.png";
 
 export default function Navbar() {
 
@@ -50,9 +51,8 @@ export default function Navbar() {
         ========================= */}
 
         <div
-          className={`navbar-links ${
-            menuOpen ? "navbar-links-active" : ""
-          }`}
+          className={`navbar-links ${menuOpen ? "navbar-links-active" : ""
+            }`}
         >
 
           <a href="#home" onClick={closeMenu}>
@@ -93,15 +93,26 @@ export default function Navbar() {
 
         </div>
 
+        <div className="meity-brand">
+          <div className="meity-text">
+            <span>Ministry of Electronics & Information Technology</span>
+            <span>Government of India</span>
+          </div>
 
+          <img
+            src={meityEmblem}
+            alt="Government of India Emblem"
+            className="meity-emblem"
+          />
+        </div>
+        
         {/* =========================
             MOBILE MENU BUTTON
         ========================= */}
 
         <button
-          className={`navbar-menu ${
-            menuOpen ? "open" : ""
-          }`}
+          className={`navbar-menu ${menuOpen ? "open" : ""
+            }`}
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle navigation menu"
