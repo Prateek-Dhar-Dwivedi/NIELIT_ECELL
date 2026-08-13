@@ -148,7 +148,7 @@ export default function Footer() {
         <div className="footer-bottom">
 
           <p>
-            © {new Date().getFullYear()} E-Cell.
+            © {new Date().getFullYear()} N.E.X.T.
             All rights reserved.
           </p>
 
