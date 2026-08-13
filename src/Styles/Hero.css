@@ -1,6 +1,6 @@
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero {
   position: relative;
@@ -21,9 +21,9 @@
 }
 
 
-/* =========================
-   GRID BACKGROUND
-========================= */
+/* =========================================================
+   GRID
+========================================================= */
 
 .hero-grid {
   position: absolute;
@@ -41,8 +41,7 @@
       rgba(41, 42, 45, 0.035) 1px,
       transparent 1px);
 
-  background-size:
-    80px 80px;
+  background-size: 80px 80px;
 
   mask-image:
     linear-gradient(to bottom,
@@ -51,9 +50,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    CONTAINER
-========================= */
+========================================================= */
 
 .hero-container {
   position: relative;
@@ -73,27 +72,28 @@
 
   align-items: center;
 
-  gap: 40px;
+  gap: 50px;
 
-  padding:
-    70px 0 80px;
+  padding: 70px 0 80px;
 }
 
 
-/* =========================
+/* =========================================================
    LEFT CONTENT
-========================= */
+========================================================= */
 
 .hero-content {
   position: relative;
 
   z-index: 3;
+
+  min-width: 0;
 }
 
 
-/* =========================
+/* =========================================================
    EYEBROW
-========================= */
+========================================================= */
 
 .hero-eyebrow {
   display: flex;
@@ -116,20 +116,12 @@
 }
 
 
-/* =========================
+/* =========================================================
    TITLE
-========================= */
+========================================================= */
 
 .hero-title {
   overflow: hidden;
-}
-
-/* Make N.E.X.T. the main brand name */
-.hero-title .hero-next {
-  font-size: clamp(95px, 12vw, 190px);
-  line-height: 0.72;
-  letter-spacing: -10px;
-  margin-top: 5px;
 }
 
 .hero-title h1 {
@@ -148,9 +140,6 @@
   white-space: nowrap;
 }
 
-
-/* Outline text */
-
 .hero-title .hero-outline {
   color: transparent;
 
@@ -161,10 +150,22 @@
     2px var(--next-charcoal);
 }
 
+.hero-title .hero-next {
+  font-size: clamp(95px,
+      12vw,
+      190px);
 
-/* =========================
+  line-height: 0.72;
+
+  letter-spacing: -10px;
+
+  margin-top: 5px;
+}
+
+
+/* =========================================================
    DESCRIPTION
-========================= */
+========================================================= */
 
 .hero-description {
   max-width: 650px;
@@ -179,9 +180,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    ACTIONS
-========================= */
+========================================================= */
 
 .hero-actions {
   display: flex;
@@ -194,9 +195,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    PRIMARY BUTTON
-========================= */
+========================================================= */
 
 .hero-primary {
   display: inline-flex;
@@ -227,7 +228,6 @@
     background 0.35s ease;
 }
 
-
 .hero-primary:hover {
   transform: translateY(-4px);
 
@@ -236,14 +236,15 @@
   color: var(--next-charcoal);
 }
 
-
 .hero-button-icon {
   width: 42px;
+
   height: 42px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   background: var(--next-white);
@@ -258,15 +259,14 @@
     transform 0.4s ease;
 }
 
-
 .hero-primary:hover .hero-button-icon {
   transform: rotate(45deg);
 }
 
 
-/* =========================
+/* =========================================================
    SECONDARY BUTTON
-========================= */
+========================================================= */
 
 .hero-secondary {
   display: inline-flex;
@@ -299,7 +299,6 @@
     transform 0.3s ease;
 }
 
-
 .hero-secondary:hover {
   background: var(--next-charcoal);
 
@@ -309,117 +308,425 @@
 }
 
 
-/* =========================
+/* =========================================================
    RIGHT VISUAL
-========================= */
+========================================================= */
 
 .hero-visual {
   position: relative;
 
-  width: min(580px, 100%);
+  width: min(600px, 100%);
 
-  aspect-ratio: 1;
+  min-height: 600px;
 
   margin-left: auto;
 
   display: flex;
 
+  flex-direction: column;
+
   align-items: center;
 
   justify-content: center;
+
+  isolation: isolate;
 }
 
 
-/* =========================
-   DIAMONDS
-========================= */
+/* =========================================================
+   BACKGROUND RINGS
+========================================================= */
 
-.hero-diamond {
+.brand-ring {
   position: absolute;
 
-  border: 1px solid rgba(41, 42, 45, 0.22);
+  border: 1px solid rgba(41, 42, 45, 0.08);
 
-  transform: rotate(45deg);
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: -2;
 }
 
+.brand-ring-one {
+  width: 480px;
 
-.hero-diamond-outer {
-  width: 74%;
+  height: 480px;
 
-  aspect-ratio: 1;
+  animation:
+    brandRotate 35s linear infinite;
 }
 
+.brand-ring-two {
+  width: 390px;
 
-.hero-diamond-inner {
-  width: 54%;
-
-  aspect-ratio: 1;
+  height: 390px;
 
   border-color:
-    rgba(202, 160, 60, 0.5);
+    rgba(202, 160, 60, 0.16);
+
+  animation:
+    brandRotateReverse 28s linear infinite;
+}
+
+@keyframes brandRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes brandRotateReverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
 }
 
 
-/* =========================
-   LOGO BOX
-========================= */
+/* =========================================================
+   CROSSHAIR
+========================================================= */
 
-.hero-logo-box {
+.brand-crosshair {
+  position: absolute;
+
+  background:
+    rgba(41, 42, 45, 0.06);
+
+  pointer-events: none;
+
+  z-index: -3;
+}
+
+.brand-crosshair.horizontal {
+  width: 100%;
+
+  height: 1px;
+
+  left: 0;
+
+  top: 45%;
+}
+
+.brand-crosshair.vertical {
+  width: 1px;
+
+  height: 90%;
+
+  top: 5%;
+
+  left: 50%;
+}
+
+
+/* =========================================================
+   FULL FORM CONTAINER
+========================================================= */
+
+.next-meaning {
   position: relative;
 
-  z-index: 3;
+  z-index: 5;
 
-  width: 40%;
+  width: min(500px, 92%);
 
-  aspect-ratio: 1;
+  min-height: 280px;
 
   display: flex;
 
   align-items: center;
 
   justify-content: center;
-
-  background: var(--next-off-white);
-
-  border: 1px solid var(--next-gold);
-
-  box-shadow:
-    0 25px 70px rgba(41, 42, 45, 0.08);
 }
 
 
-.hero-logo-box span {
-  font-size: clamp(24px,
-      3vw,
-      42px);
+/* =========================================================
+   MEANING
+========================================================= */
+
+.meaning-container {
+  width: 100%;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+
+/* =========================================================
+   FULL FORM ROW
+========================================================= */
+
+.meaning-row {
+  display: flex;
+  margin-left: 90px;
+  align-items: baseline;
+
+  gap: 18px;
+
+  padding-left: 20px;
+
+  border-left:
+    1px solid rgba(202, 160, 60, 0.55);
+}
+
+.meaning-letter {
+  width: 34px;
+
+  flex-shrink: 0;
+
+  color: var(--next-gold);
+
+  font-size: 25px;
 
   font-weight: 800;
 
-  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.meaning-word {
+  color: var(--next-charcoal);
+
+  font-size: clamp(22px,
+      2.5vw,
+      32px);
+
+  font-weight: 650;
+
+  letter-spacing: -0.8px;
 }
 
 
-/* =========================
-   VISUAL LINE
-========================= */
+/* =========================================================
+   FULL FORM CAPTION
+========================================================= */
 
-.hero-visual-line {
-  position: absolute;
+.meaning-caption {
+  margin-top: 14px;
 
-  width: 95%;
+  color: var(--next-slate);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+
+  line-height: 1.6;
+
+  padding-left: 72px;
+}
+
+
+/* =========================================================
+   TRANSFORMATION
+========================================================= */
+
+.transform-container {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: clamp(8px,
+      1.4vw,
+      18px);
+}
+
+.transform-letter {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: var(--next-charcoal);
+
+  font-size: clamp(65px,
+      8vw,
+      110px);
+
+  font-weight: 850;
+
+  letter-spacing: -6px;
+
+  text-shadow:
+    0 15px 40px rgba(41, 42, 45, 0.08);
+}
+
+
+/* =========================================================
+   FINAL N.E.X.T.
+========================================================= */
+
+.next-final {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: var(--next-charcoal);
+
+  font-size: clamp(60px,
+      8vw,
+      105px);
+
+  font-weight: 850;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 20px 50px rgba(41, 42, 45, 0.1);
+}
+
+.next-final span:nth-child(even) {
+  color: var(--next-gold);
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   BRAND LINE
+========================================================= */
+
+.brand-line {
+  width: min(380px, 70%);
 
   height: 1px;
 
-  background:
-    rgba(41, 42, 45, 0.08);
+  margin-top: 5px;
 
-  transform: rotate(-28deg);
+  background:
+    linear-gradient(90deg,
+      transparent,
+      var(--next-gold),
+      transparent);
+
+  transform-origin: center;
 }
 
 
+/* =========================================================
+   INSTITUTION INFO
+========================================================= */
+
+.institution-info {
+  position: relative;
+  margin-top: 22px;
+  text-align: center;
+  max-width: 430px;
+}
+
+.institution-title {
+  color: var(--next-charcoal);
+
+  font-size: 15px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
 /* =========================
-   ORBITS
+   CIED
 ========================= */
+
+.institution-code {
+  color: var(--next-gold);
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   CIED FULL FORM
+========================= */
+
+.institution-subtitle {
+  color: var(--next-slate);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  text-align: center;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.institution-subtitle span {
+  display: block;
+  color: var(--next-slate);
+  padding: 0;
+}
+
+.institution-subtitle span:nth-child(2) {
+  margin: 1px 0;
+}
+
+/* Keep & neutral */
+.institution-subtitle span {
+  color: var(--next-slate);
+  padding: 0 5px;
+}
+
+/* =========================================================
+   FLOATING DOTS
+========================================================= */
+
+.brand-floating-dot {
+  position: absolute;
+
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--next-gold);
+
+  z-index: 2;
+}
+
+.dot-one {
+  top: 18%;
+
+  right: 14%;
+}
+
+.dot-two {
+  bottom: 24%;
+
+  left: 10%;
+
+  width: 5px;
+
+  height: 5px;
+}
+
+
+/* =========================================================
+   OLD HERO ORBITS
+========================================================= */
 
 .hero-orbit {
   position: absolute;
@@ -429,34 +736,38 @@
   border-radius: 50%;
 
   pointer-events: none;
-}
 
+  z-index: 0;
+}
 
 .hero-orbit-one {
   width: 520px;
+
   height: 180px;
 
   right: -120px;
+
   bottom: 40px;
 
   transform: rotate(-25deg);
 }
 
-
 .hero-orbit-two {
   width: 600px;
+
   height: 220px;
 
   right: -150px;
+
   bottom: 20px;
 
   transform: rotate(-25deg);
 }
 
 
-/* =========================
+/* =========================================================
    DOT
-========================= */
+========================================================= */
 
 .hero-dot {
   position: absolute;
@@ -466,6 +777,7 @@
   right: 18%;
 
   width: 9px;
+
   height: 9px;
 
   border-radius: 50%;
@@ -474,9 +786,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    SCROLL
-========================= */
+========================================================= */
 
 .hero-scroll {
   position: absolute;
@@ -502,31 +814,23 @@
   letter-spacing: 1.8px;
 }
 
-
 .hero-scroll svg {
   font-size: 15px;
 }
 
 
-/* =========================
+/* =========================================================
    TABLET
-========================= */
+========================================================= */
 
 @media (max-width: 1100px) {
 
-  .hero-title .hero-next {
-    font-size: clamp(85px, 11vw, 155px);
-    line-height: 0.76;
-    letter-spacing: -8px;
-  }
-
   .hero-container {
     grid-template-columns:
-      1fr 0.75fr;
+      1fr 0.85fr;
 
-    gap: 10px;
+    gap: 20px;
   }
-
 
   .hero-title h1 {
     font-size: clamp(60px,
@@ -534,30 +838,44 @@
         105px);
   }
 
+  .hero-title .hero-next {
+    font-size: clamp(85px,
+        11vw,
+        155px);
+
+    line-height: 0.76;
+
+    letter-spacing: -8px;
+  }
 
   .hero-description {
     max-width: 550px;
   }
 
-
   .hero-visual {
-    width: 480px;
+    min-height: 500px;
+  }
+
+  .brand-ring-one {
+    width: 420px;
+
+    height: 420px;
+  }
+
+  .brand-ring-two {
+    width: 340px;
+
+    height: 340px;
   }
 
 }
 
 
-/* =========================
+/* =========================================================
    SMALL TABLET
-========================= */
+========================================================= */
 
 @media (max-width: 850px) {
-
-  .hero-title .hero-next {
-    font-size: clamp(85px, 13vw, 145px);
-    line-height: 0.76;
-    letter-spacing: -7px;
-  }
 
   .hero {
     padding-top: 76px;
@@ -565,16 +883,13 @@
     align-items: flex-start;
   }
 
-
   .hero-container {
     min-height: auto;
 
     grid-template-columns: 1fr;
 
-    padding:
-      80px 0 100px;
+    padding: 80px 0 100px;
   }
-
 
   .hero-title h1 {
     font-size: clamp(60px,
@@ -582,14 +897,20 @@
         100px);
   }
 
-
-  .hero-visual {
-    width: min(520px, 90vw);
-
-    margin:
-      30px auto 0;
+  .hero-title .hero-next {
+    font-size: clamp(85px,
+        13vw,
+        145px);
   }
 
+  .hero-visual {
+    width: 100%;
+
+    min-height: 550px;
+
+    margin:
+      40px auto 0;
+  }
 
   .hero-scroll {
     display: none;
@@ -598,19 +919,17 @@
 }
 
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media (max-width: 600px) {
 
   .hero-container {
     width: 90%;
 
-    padding:
-      65px 0 80px;
+    padding: 65px 0 80px;
   }
-
 
   .hero-eyebrow {
     font-size: 9px;
@@ -621,7 +940,6 @@
 
     margin-bottom: 28px;
   }
-
 
   .hero-title h1 {
     font-size: clamp(48px,
@@ -634,8 +952,12 @@
   }
 
   .hero-title .hero-next {
-    font-size: clamp(70px, 19vw, 110px);
+    font-size: clamp(70px,
+        19vw,
+        110px);
+
     letter-spacing: -5px;
+
     line-height: 0.76;
   }
 
@@ -652,46 +974,128 @@
     line-height: 1.7;
   }
 
-
   .hero-actions {
     flex-wrap: wrap;
 
     margin-top: 30px;
   }
 
-
   .hero-primary {
     padding-left: 20px;
   }
 
-
   .hero-secondary {
-    padding:
-      13px 17px;
+    padding: 13px 17px;
   }
 
 
+  /* RIGHT ANIMATION */
+
   .hero-visual {
-    width: 100%;
+    min-height: 480px;
 
     margin-top: 35px;
   }
 
+  .next-meaning {
+    width: 100%;
 
-  .hero-logo-box {
-    width: 42%;
+    min-height: 250px;
   }
 
-
-  .hero-logo-box span {
-    font-size: 24px;
+  .meaning-container {
+    gap: 11px;
   }
 
+  .meaning-row {
+    gap: 12px;
+
+    padding-left: 12px;
+  }
+
+  .meaning-letter {
+    width: 25px;
+
+    font-size: 19px;
+  }
+
+  .meaning-word {
+    font-size: clamp(18px,
+        5.5vw,
+        26px);
+  }
+
+  .meaning-caption {
+    padding-left: 49px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.8px;
+  }
+
+  .transform-container {
+    gap: 6px;
+  }
+
+  .transform-letter {
+    font-size: clamp(55px,
+        16vw,
+        85px);
+
+    letter-spacing: -4px;
+  }
+
+  .next-final {
+    font-size: clamp(45px,
+        14vw,
+        75px);
+
+    letter-spacing: 3px !important;
+  }
+
+  .brand-ring-one {
+    width: 330px;
+
+    height: 330px;
+  }
+
+  .brand-ring-two {
+    width: 270px;
+
+    height: 270px;
+  }
+
+  .brand-crosshair.horizontal {
+    width: 130%;
+
+    left: -15%;
+  }
+
+  .institution-title {
+    font-size: 13px;
+  }
+
+  .institution-subtitle {
+    max-width: 280px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    font-size: 9px;
+  }
+
+  .institution-code {
+    font-size: 8px;
+  }
+
+  .brand-line {
+    width: 70%;
+  }
 
   .hero-orbit-one {
     right: -250px;
   }
-
 
   .hero-orbit-two {
     right: -300px;
@@ -700,20 +1104,23 @@
 }
 
 
-/* =========================
+/* =========================================================
    VERY SMALL MOBILE
-========================= */
+========================================================= */
 
 @media (max-width: 400px) {
 
   .hero-title .hero-next {
     font-size: 70px;
+
     letter-spacing: -4px;
+
     line-height: 0.76;
   }
 
   .hero-title h1 {
     font-size: 44px;
+
     letter-spacing: -3px;
   }
 
@@ -724,4 +1131,55 @@
   .hero-primary {
     font-size: 10px;
   }
+
+  .hero-visual {
+    min-height: 430px;
+  }
+
+  .meaning-word {
+    font-size: 17px;
+  }
+
+  .meaning-letter {
+    font-size: 17px;
+
+    width: 22px;
+  }
+
+  .meaning-caption {
+    font-size: 7px;
+
+    padding-left: 40px;
+  }
+
+  .next-final {
+    font-size: 42px;
+
+    letter-spacing: 1px !important;
+  }
+
+  .transform-letter {
+    font-size: 50px;
+  }
+
+  .brand-ring-one {
+    width: 290px;
+
+    height: 290px;
+  }
+
+  .brand-ring-two {
+    width: 235px;
+
+    height: 235px;
+  }
+
+  .institution-title {
+    font-size: 11px;
+  }
+
+  .institution-subtitle {
+    font-size: 8px;
+  }
+
 }

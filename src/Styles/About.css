@@ -1,6 +1,6 @@
-/* =========================
+/* =========================================================
    ABOUT SECTION
-========================= */
+========================================================= */
 
 .about-section {
   position: relative;
@@ -13,18 +13,55 @@
 }
 
 
-/* =========================
-   CONTAINER
-========================= */
+/* =========================================================
+   SUBTLE BACKGROUND
+========================================================= */
 
-.about-container {
-  position: relative;
+.about-section::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 90px 90px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 90%
+    );
 }
 
 
-/* =========================
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.about-container {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
    LABEL
-========================= */
+========================================================= */
 
 .about-label {
   display: flex;
@@ -51,9 +88,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    CONTENT
-========================= */
+========================================================= */
 
 .about-content {
   display: grid;
@@ -67,9 +104,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    HEADING
-========================= */
+========================================================= */
 
 .about-content h2 {
   max-width: 800px;
@@ -96,9 +133,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    DESCRIPTION
-========================= */
+========================================================= */
 
 .about-description {
   max-width: 480px;
@@ -115,9 +152,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    LINK
-========================= */
+========================================================= */
 
 .about-link {
   display: inline-flex;
@@ -130,8 +167,8 @@
 
   padding-bottom: 8px;
 
-  border-bottom: 1px solid
-    var(--next-gold);
+  border-bottom:
+    1px solid var(--next-gold);
 
   color: var(--next-white);
 
@@ -140,6 +177,8 @@
   font-weight: 700;
 
   letter-spacing: 1.2px;
+
+  text-decoration: none;
 
   transition:
     color 0.3s ease,
@@ -153,14 +192,14 @@
 }
 
 
-/* =========================
+/* =========================================================
    VISUAL
-========================= */
+========================================================= */
 
 .about-visual {
   position: relative;
 
-  min-height: 360px;
+  min-height: 460px;
 
   margin-top: 70px;
 
@@ -172,11 +211,11 @@
 }
 
 
-/* =========================
-   VISUAL INNER
-========================= */
+/* =========================================================
+   IDEA SYSTEM
+========================================================= */
 
-.about-visual-inner {
+.idea-system {
   position: relative;
 
   width: 430px;
@@ -191,58 +230,189 @@
 }
 
 
-/* =========================
-   GRID
-========================= */
+/* =========================================================
+   ORBITS
+========================================================= */
 
-.about-grid {
+.idea-orbit {
   position: absolute;
 
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.12);
+
+  pointer-events: none;
+}
+
+
+/* OUTER */
+
+.idea-orbit-one {
+  width: 390px;
+
+  height: 250px;
+
+  transform:
+    rotate(25deg);
+}
+
+
+/* MIDDLE */
+
+.idea-orbit-two {
   width: 330px;
 
-  height: 330px;
+  height: 210px;
 
-  display: grid;
+  transform:
+    rotate(-35deg);
 
-  grid-template-columns:
-    repeat(2, 1fr);
-
-  grid-template-rows:
-    repeat(2, 1fr);
-
-  transform: rotate(45deg);
-}
-
-
-/* Grid lines */
-
-.about-grid span {
-  border: 1px solid
-    rgba(255, 255, 255, 0.14);
-}
-
-
-/* Gold geometry */
-
-.about-grid span:nth-child(2),
-.about-grid span:nth-child(3) {
   border-color:
-    rgba(201, 162, 39, 0.5);
+    rgba(201, 162, 39, 0.32);
 }
 
 
-/* =========================
-   CENTER MARK
-========================= */
+/* INNER */
 
-.about-center-mark {
+.idea-orbit-three {
+  width: 270px;
+
+  height: 170px;
+
+  transform:
+    rotate(65deg);
+
+  border-color:
+    rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   NODES
+========================================================= */
+
+.idea-node {
+  position: absolute;
+
+  width: 9px;
+
+  height: 9px;
+
+  border-radius: 50%;
+
+  background:
+    var(--next-gold);
+
+  box-shadow:
+    0 0 18px
+    rgba(201, 162, 39, 0.35);
+}
+
+
+/* Orbit node positions */
+
+.node-one {
+  top: 18px;
+
+  left: 50%;
+}
+
+.node-two {
+  right: 18px;
+
+  bottom: 35px;
+}
+
+.node-three {
+  left: 25px;
+
+  top: 50%;
+}
+
+
+/* =========================================================
+   CONNECTION LINES
+========================================================= */
+
+.idea-line {
+  position: absolute;
+
+  width: 220px;
+
+  height: 1px;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  transform-origin: center;
+}
+
+
+.idea-line-one {
+  transform:
+    rotate(25deg);
+}
+
+
+.idea-line-two {
+  transform:
+    rotate(-25deg);
+}
+
+
+.idea-line-three {
+  transform:
+    rotate(90deg);
+}
+
+
+/* =========================================================
+   CENTER
+========================================================= */
+
+.idea-center {
   position: relative;
 
-  z-index: 2;
+  z-index: 5;
 
-  width: 150px;
+  width: 145px;
 
-  height: 150px;
+  height: 145px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    var(--next-charcoal);
+
+  border:
+    1px solid var(--next-gold);
+
+  box-shadow:
+    0 0 0
+      rgba(201, 162, 39, 0),
+
+    0 20px 70px
+      rgba(0, 0, 0, 0.25);
+}
+
+
+/* Center plus */
+
+.idea-center-symbol {
+  width: 32px;
+
+  height: 32px;
+
+  margin-bottom: 8px;
 
   display: flex;
 
@@ -250,27 +420,141 @@
 
   justify-content: center;
 
-  border: 1px solid
+  border:
+    1px solid
     var(--next-gold);
 
   border-radius: 50%;
 
-  background:
-    var(--next-charcoal);
+  color:
+    var(--next-gold);
 
-  color: var(--next-white);
+  font-size: 20px;
 
-  font-size: 17px;
-
-  font-weight: 800;
-
-  letter-spacing: -0.5px;
+  font-weight: 300;
 }
 
 
-/* =========================
+.idea-center span {
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  color:
+    var(--next-white);
+}
+
+
+/* =========================================================
+   FLOATING LABELS
+========================================================= */
+
+.idea-label {
+  position: absolute;
+
+  z-index: 6;
+
+  padding: 8px 13px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  background:
+    rgba(41, 42, 45, 0.75);
+
+  color:
+    var(--next-silver);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  backdrop-filter: blur(8px);
+}
+
+
+/* CREATE */
+
+.idea-label-one {
+  top: 40px;
+
+  left: 65px;
+
+  border-color:
+    rgba(201, 162, 39, 0.35);
+
+  color:
+    var(--next-gold);
+}
+
+
+/* CONNECT */
+
+.idea-label-two {
+  top: 115px;
+
+  right: 15px;
+}
+
+
+/* BUILD */
+
+.idea-label-three {
+  bottom: 65px;
+
+  left: 20px;
+}
+
+
+/* IMPACT */
+
+.idea-label-four {
+  right: 45px;
+
+  bottom: 45px;
+
+  border-color:
+    rgba(201, 162, 39, 0.35);
+
+  color:
+    var(--next-gold);
+}
+
+
+/* =========================================================
+   SMALL GLOW
+========================================================= */
+
+.idea-system::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+
+  height: 180px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(201, 162, 39, 0.08),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
    TABLET
-========================= */
+========================================================= */
 
 @media (max-width: 900px) {
 
@@ -289,15 +573,15 @@
   .about-visual {
     margin-top: 30px;
 
-    min-height: 360px;
+    min-height: 430px;
   }
 
 }
 
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media (max-width: 600px) {
 
@@ -319,32 +603,138 @@
 
 
   .about-visual {
-    min-height: 280px;
+    min-height: 330px;
 
     margin-top: 20px;
   }
 
 
-  .about-visual-inner {
-    width: 300px;
+  .idea-system {
+    width: 310px;
 
-    height: 300px;
+    height: 310px;
   }
 
 
-  .about-grid {
+  .idea-orbit-one {
+    width: 285px;
+
+    height: 185px;
+  }
+
+
+  .idea-orbit-two {
     width: 240px;
 
-    height: 240px;
+    height: 155px;
   }
 
 
-  .about-center-mark {
-    width: 115px;
+  .idea-orbit-three {
+    width: 195px;
+
+    height: 125px;
+  }
+
+
+  .idea-center {
+    width: 105px;
+
+    height: 105px;
+  }
+
+
+  .idea-center-symbol {
+    width: 25px;
+
+    height: 25px;
+
+    font-size: 16px;
+  }
+
+
+  .idea-center span {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .idea-label {
+    font-size: 7px;
+
+    padding: 6px 9px;
+
+    letter-spacing: 1.2px;
+  }
+
+
+  .idea-label-one {
+    top: 25px;
+
+    left: 30px;
+  }
+
+
+  .idea-label-two {
+    top: 80px;
+
+    right: 0;
+  }
+
+
+  .idea-label-three {
+    bottom: 40px;
+
+    left: 0;
+  }
+
+
+  .idea-label-four {
+    right: 25px;
+
+    bottom: 25px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .about-content h2 {
+    font-size: 39px;
+  }
+
+
+  .idea-system {
+    width: 280px;
+
+    height: 280px;
+  }
+
+
+  .idea-orbit-one {
+    width: 255px;
+
+    height: 165px;
+  }
+
+
+  .idea-orbit-two {
+    width: 215px;
+
+    height: 140px;
+  }
+
+
+  .idea-orbit-three {
+    width: 175px;
 
     height: 115px;
-
-    font-size: 14px;
   }
 
 }

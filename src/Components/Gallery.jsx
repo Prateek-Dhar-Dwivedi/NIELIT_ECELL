@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 
 import "../Styles/Gallery.css";
 
-import gallery1 from "../Assets/Images/IMG_9417.JPG.jpeg";
-import gallery2 from "../Assets/Images/IMG_9415.JPG.jpeg";
-import gallery3 from "../Assets/Images/IMG_9412.JPG.jpeg";
-import gallery4 from "../Assets/Images/IMG_9413.JPG.jpeg";
+import gallery1 from "../Assets/Images/1.jpeg";
+import gallery2 from "../Assets/Images/2.jpeg";
+import gallery3 from "../Assets/Images/4.jpeg";
+import gallery4 from "../Assets/Images/3.jpeg";
 
 const galleryItems = [
   {

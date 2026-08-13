@@ -9,31 +9,57 @@ export default function About() {
 
       <div className="container about-container">
 
-        {/* Section label */}
+        {/* =========================
+            SECTION LABEL
+        ========================= */}
 
         <motion.div
           className="about-label"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            duration: 0.6,
+          }}
         >
           <span>01</span>
           <span>ABOUT E-CELL</span>
         </motion.div>
 
 
-        {/* Main content */}
+        {/* =========================
+            MAIN CONTENT
+        ========================= */}
 
         <div className="about-content">
 
+          {/* LEFT */}
+
           <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            initial={{
+              opacity: 0,
+              y: 40,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.3,
+            }}
             transition={{
               duration: 0.8,
-              ease: [0.22, 1, 0.36, 1]
+              ease: [0.22, 1, 0.36, 1],
             }}
           >
             Where ideas begin
@@ -41,14 +67,25 @@ export default function About() {
           </motion.h2>
 
 
+          {/* RIGHT TEXT */}
+
           <motion.div
             className="about-description"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            initial={{
+              opacity: 0,
+              y: 30,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.3,
+            }}
             transition={{
               duration: 0.8,
-              delay: 0.15
+              delay: 0.15,
             }}
           >
 
@@ -79,86 +116,175 @@ export default function About() {
         </div>
 
 
-        {/* Animated visual */}
+        {/* =========================
+            IDEA ECOSYSTEM VISUAL
+        ========================= */}
 
         <motion.div
           className="about-visual"
           initial={{
             opacity: 0,
-            scale: 0.9
+            scale: 0.9,
           }}
           whileInView={{
             opacity: 1,
-            scale: 1
+            scale: 1,
           }}
           viewport={{
             once: true,
-            amount: 0.25
+            amount: 0.25,
           }}
           transition={{
             duration: 1,
-            ease: [0.22, 1, 0.36, 1]
+            ease: [0.22, 1, 0.36, 1],
           }}
         >
 
-          {/* Outer floating movement */}
+          <div className="idea-system">
 
-          <motion.div
-            className="about-visual-inner"
-            animate={{
-              y: [0, -8, 0]
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          >
-
-            {/* Rotating geometry */}
+            {/* ORBIT 1 */}
 
             <motion.div
-              className="about-grid"
+              className="idea-orbit idea-orbit-one"
               animate={{
-                rotate: [45, 55, 45]
+                rotate: 360,
               }}
               transition={{
-                duration: 6,
+                duration: 22,
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: "linear",
+              }}
+            >
+              <span className="idea-node node-one"></span>
+            </motion.div>
+
+
+            {/* ORBIT 2 */}
+
+            <motion.div
+              className="idea-orbit idea-orbit-two"
+              animate={{
+                rotate: -360,
+              }}
+              transition={{
+                duration: 16,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              <span className="idea-node node-two"></span>
+            </motion.div>
+
+
+            {/* ORBIT 3 */}
+
+            <motion.div
+              className="idea-orbit idea-orbit-three"
+              animate={{
+                rotate: 360,
+              }}
+              transition={{
+                duration: 28,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              <span className="idea-node node-three"></span>
+            </motion.div>
+
+
+            {/* CONNECTION LINES */}
+
+            <div className="idea-line idea-line-one"></div>
+            <div className="idea-line idea-line-two"></div>
+            <div className="idea-line idea-line-three"></div>
+
+
+            {/* CENTER */}
+
+            <motion.div
+              className="idea-center"
+              animate={{
+                scale: [1, 1.04, 1],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
               }}
             >
 
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
+              <div className="idea-center-symbol">
+                +
+              </div>
+
+              <span>IDEAS</span>
 
             </motion.div>
 
 
-            {/* Center mark */}
+            {/* LABELS */}
 
             <motion.div
-              className="about-center-mark"
+              className="idea-label idea-label-one"
               animate={{
-                scale: [1, 1.035, 1],
-                boxShadow: [
-                  "0 0 0 rgba(201, 162, 39, 0)",
-                  "0 0 30px rgba(201, 162, 39, 0.12)",
-                  "0 0 0 rgba(201, 162, 39, 0)"
-                ]
+                y: [0, -5, 0],
               }}
               transition={{
-                duration: 2.5,
+                duration: 3,
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: "easeInOut",
               }}
             >
-              N.E.X.T.
+              CREATE
             </motion.div>
 
-          </motion.div>
+
+            <motion.div
+              className="idea-label idea-label-two"
+              animate={{
+                y: [0, 5, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              CONNECT
+            </motion.div>
+
+
+            <motion.div
+              className="idea-label idea-label-three"
+              animate={{
+                y: [0, -4, 0],
+              }}
+              transition={{
+                duration: 3.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              BUILD
+            </motion.div>
+
+
+            <motion.div
+              className="idea-label idea-label-four"
+              animate={{
+                y: [0, 4, 0],
+              }}
+              transition={{
+                duration: 4.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              IMPACT
+            </motion.div>
+
+          </div>
 
         </motion.div>
 

@@ -9,7 +9,7 @@ import "../Styles/Team.css";
 
 import presidentImage from "../Assets/Images/Rudransh_Garg_President.jpeg";
 import vicePresidentImage from "../Assets/Images/Disha_Saini_Vice President.jpeg";
-import coreTeamImage from "../Assets/Images/IMG_9416.JPG.jpeg";
+import coreTeamImage from "../Assets/Images/coreTeamImage.jpeg";
 
 const team = [
   {
