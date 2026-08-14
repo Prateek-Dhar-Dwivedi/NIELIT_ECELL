@@ -394,6 +394,60 @@
    HIDE ONLY MEITY TEXT
    KEEP EMBLEM
 ================================================= */
+/* =========================
+   TABLET / SMALL DESKTOP
+   951px - 1200px
+========================= */
+
+@media (min-width: 951px) and (max-width: 1200px) {
+
+    .navbar-container {
+        width: 92%;
+        gap: 10px;
+    }
+
+    .navbar-brand {
+        gap: 8px;
+        flex-shrink: 0;
+    }
+
+    .college-logo {
+        width: 85px;
+    }
+
+    .next-logo {
+        width: 72px;
+    }
+
+    .navbar-links {
+        gap: 10px;
+        flex-shrink: 1;
+    }
+
+    .navbar-links a {
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    .meity-brand {
+        margin-left: 5px;
+        gap: 5px;
+        flex-shrink: 0;
+    }
+
+    .meity-emblem {
+        width: 32px;
+        height: 46px;
+    }
+
+    .meity-text span:first-child {
+        font-size: 9px;
+    }
+
+    .meity-text span:last-child {
+        font-size: 8px;
+    }
+}
 
 @media (max-width: 950px) {
 
@@ -408,11 +462,17 @@
     .meity-emblem {
         width: 36px;
         height: 50px;
-
         display: block;
     }
-}
 
+    .navbar-links {
+        gap: 10px;
+    }
+
+    .navbar-links a {
+        font-size: 10px;
+    }
+}
 
 /* =========================
    MOBILE

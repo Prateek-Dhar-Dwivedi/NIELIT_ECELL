@@ -32,7 +32,7 @@ export default function About() {
           }}
         >
           <span>01</span>
-          <span>ABOUT E-CELL</span>
+          <span>ABOUT N.E.X.T.</span>
         </motion.div>
 
 
@@ -90,17 +90,18 @@ export default function About() {
           >
 
             <p>
-              E-Cell is a student-driven platform built to
-              encourage entrepreneurship, innovation and
-              creative thinking within the campus community.
+              N.E.X.T. is a student-driven initiative under the
+              <strong> Centre for Innovation & Entrepreneurship Development (CIED), NDU Ropar</strong>,
+              focused on encouraging entrepreneurship, innovation and
+              creative thinking within the student community.
             </p>
 
             <p>
-              Through events, workshops, competitions and
-              meaningful interactions, we aim to create an
-              environment where students can explore ideas,
-              learn from others and take their first steps
-              towards building something meaningful.
+              Through events, workshops, competitions and meaningful
+              interactions, N.E.X.T. creates an environment where
+              students can explore ideas, develop entrepreneurial
+              thinking and take their first steps towards building
+              something meaningful.
             </p>
 
             <a

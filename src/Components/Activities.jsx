@@ -7,10 +7,12 @@ const activities = [
   {
     number: "01",
     category: "EVENT",
-    title: "Entrepreneurship Summit",
-    date: "COMING SOON",
+    title: "Eureka! Pitching Competition",
+    date: "21/08/26",
     description:
-      "A platform for students to explore entrepreneurship, ideas, innovation and opportunities.",
+      "A platform for students to present ideas, receive feedback and experience the fundamentals of pitching.",
+    href: "https://forms.gle/9BLp5Nm5St7hoqhp8",
+    external: true,
   },
   {
     number: "02",
@@ -19,14 +21,18 @@ const activities = [
     date: "COMING SOON",
     description:
       "An interactive learning experience focused on developing entrepreneurial and innovative thinking.",
+    href: "/",
+    external: false,
   },
   {
     number: "03",
     category: "COMPETITION",
-    title: "Idea Pitch Challenge",
+    title: "Entrepreneurship Summit",
     date: "COMING SOON",
     description:
-      "A platform for students to present ideas, receive feedback and experience the fundamentals of pitching.",
+      "A platform for students to explore entrepreneurship, ideas, innovation and opportunities.",
+    href: "/",
+    external: false,
   },
 ];
 
@@ -80,9 +86,12 @@ export default function Activities() {
 
           {activities.map((activity, index) => (
 
-            <motion.article
+            <motion.a
               className="activity-card"
               key={activity.number}
+              href={activity.href}
+              target={activity.external ? "_blank" : undefined}
+              rel={activity.external ? "noopener noreferrer" : undefined}
               initial={{
                 opacity: 0,
                 y: 60,
@@ -140,7 +149,7 @@ export default function Activities() {
 
               </div>
 
-            </motion.article>
+            </motion.a>
 
           ))}
 

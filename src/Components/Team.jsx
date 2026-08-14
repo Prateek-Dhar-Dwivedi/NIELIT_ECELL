@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import {
   FiLinkedin,
-  FiInstagram,
-  FiArrowUpRight
+  FiMail,
 } from "react-icons/fi";
 
 import "../Styles/Team.css";
@@ -17,17 +16,19 @@ const team = [
     role: "President",
     image: presidentImage,
     linkedin: "https://www.linkedin.com/in/rudranshgarg2105/",
-    instagram: "https://www.instagram.com/rudranshgarg_21/",
+    email: "rudranshgarg2005@gmail.com",
     isCoreTeam: false,
   },
+
   {
     name: "Disha Saini",
     role: "Vice President",
     image: vicePresidentImage,
     linkedin: "https://www.linkedin.com/in/disha-saini-973183343/",
-    instagram: "https://www.instagram.com/rudranshgarg_21/",
+    email: "d1shaa0311@gmail.com",
     isCoreTeam: false,
   },
+
   {
     name: "Core Team",
     role: "The people who turn ideas into action.",
@@ -38,7 +39,11 @@ const team = [
 
 export default function Team() {
   return (
-    <section className="team-section" id="team">
+    <section
+      className="team-section"
+      id="team"
+      style={{ marginTop: "-150px" }}
+    >
 
       <div className="container">
 
@@ -50,18 +55,18 @@ export default function Team() {
           className="team-heading"
           initial={{
             opacity: 0,
-            y: 35
+            y: 35,
           }}
           whileInView={{
             opacity: 1,
-            y: 0
+            y: 0,
           }}
           viewport={{
             once: true,
-            amount: 0.25
+            amount: 0.25,
           }}
           transition={{
-            duration: 0.8
+            duration: 0.8,
           }}
         >
 
@@ -69,6 +74,7 @@ export default function Team() {
             <span>06</span>
             <span>THE TEAM</span>
           </div>
+
 
           <div className="team-title-row">
 
@@ -89,7 +95,7 @@ export default function Team() {
 
 
         {/* =========================
-            TEAM
+            TEAM GRID
         ========================= */}
 
         <div className="team-grid">
@@ -98,33 +104,35 @@ export default function Team() {
 
             <motion.article
               className={`team-member ${
-                member.isCoreTeam ? "core-team-member" : ""
+                member.isCoreTeam
+                  ? "core-team-member"
+                  : ""
               }`}
               key={`${member.name}-${index}`}
 
               initial={{
                 opacity: 0,
-                y: 50
+                y: 50,
               }}
 
               whileInView={{
                 opacity: 1,
-                y: 0
+                y: 0,
               }}
 
               viewport={{
                 once: true,
-                amount: 0.15
+                amount: 0.15,
               }}
 
               transition={{
                 duration: 0.7,
-                delay: index * 0.1
+                delay: index * 0.1,
               }}
             >
 
               {/* =========================
-                  IMAGE
+                  TEAM IMAGE
               ========================= */}
 
               <div className="team-image">
@@ -134,47 +142,57 @@ export default function Team() {
                   alt={member.name}
                 />
 
-                {/* Social icons only for individual members */}
+
+                {/* =========================
+                    SOCIAL / CONTACT
+                ========================= */}
 
                 {!member.isCoreTeam && (
+
                   <div className="team-overlay">
 
                     <div className="team-socials">
 
-                      <a
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${member.name} LinkedIn`}
-                      >
-                        <FiLinkedin />
-                      </a>
+                      {/* LINKEDIN */}
 
-                      {member.instagram !== "YOUR_INSTAGRAM" && (
+                      {member.linkedin && (
+
                         <a
-                          href={member.instagram}
+                          href={member.linkedin}
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label={`${member.name} Instagram`}
+                          aria-label={`${member.name} LinkedIn`}
                         >
-                          <FiInstagram />
+                          <FiLinkedin />
                         </a>
+
+                      )}
+
+
+                      {/* EMAIL */}
+
+                      {member.email && (
+
+                        <a
+                          href={`mailto:${member.email}`}
+                          aria-label={`Email ${member.name}`}
+                        >
+                          <FiMail />
+                        </a>
+
                       )}
 
                     </div>
 
-                    <div className="team-profile-arrow">
-                      <FiArrowUpRight />
-                    </div>
-
                   </div>
+
                 )}
 
               </div>
 
 
               {/* =========================
-                  INFORMATION
+                  TEAM INFORMATION
               ========================= */}
 
               <div className="team-info">
