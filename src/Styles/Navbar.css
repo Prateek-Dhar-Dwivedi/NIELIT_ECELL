@@ -10,7 +10,7 @@
     width: 100%;
     z-index: 1000;
 
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.94);
 
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
@@ -110,11 +110,13 @@
     align-items: center;
     justify-content: flex-end;
 
-    gap: 32px;
+    gap: 30px;
 
     margin-left: auto;
 
     flex-shrink: 1;
+
+    min-width: 0;
 }
 
 
@@ -250,9 +252,9 @@
 }
 
 
-/* =========================
-   MOBILE MENU
-========================= */
+/* =========================================================
+   HAMBURGER BUTTON
+========================================================= */
 
 .navbar-menu {
     display: none;
@@ -266,7 +268,7 @@
 
     border-radius: 50%;
 
-    background: transparent;
+    background: rgba(255, 255, 255, 0.8);
 
     cursor: pointer;
 
@@ -285,13 +287,17 @@
 }
 
 
+/* HAMBURGER LINES */
+
 .navbar-menu span {
     display: block;
 
     width: 18px;
-    height: 1.5px;
+    height: 2px;
 
     background: var(--next-charcoal);
+
+    border-radius: 2px;
 
     transition:
         transform 0.3s ease,
@@ -304,284 +310,40 @@
 ========================= */
 
 .navbar-menu.open span:first-child {
-    transform: translateY(3.25px) rotate(45deg);
+    transform: translateY(3.5px) rotate(45deg);
 }
-
 
 .navbar-menu.open span:last-child {
-    transform: translateY(-3.25px) rotate(-45deg);
+    transform: translateY(-3.5px) rotate(-45deg);
 }
 
 
-/* =========================
-   LARGE TABLET
-========================= */
+/* =========================================================
+   LAPTOP
+   <= 1350px
+========================================================= */
 
-@media (max-width: 1200px) {
+@media (max-width: 1350px) {
 
     .navbar-container {
         width: 94%;
-        gap: 15px;
-    }
-
-    .navbar-links {
-        gap: 20px;
-    }
-
-    .navbar-links a {
-        font-size: 12px;
-    }
-
-    .college-logo {
-        width: 95px;
-    }
-
-    .next-logo {
-        width: 82px;
-    }
-
-    .meity-text span:first-child {
-        font-size: 10px;
-    }
-
-    .meity-text span:last-child {
-        font-size: 9px;
-    }
-}
-
-
-/* =========================
-   SMALL DESKTOP / TABLET
-========================= */
-
-@media (max-width: 1050px) {
-
-    .navbar-links {
         gap: 14px;
     }
 
-    .navbar-links a {
-        font-size: 11px;
-    }
-
-    .navbar-brand {
-        gap: 10px;
-    }
-
-    .college-logo {
-        width: 85px;
-    }
-
-    .next-logo {
-        width: 75px;
-    }
-
-    .meity-brand {
-        margin-left: 5px;
-        gap: 7px;
-    }
-
-    .meity-emblem {
-        width: 34px;
-        height: 48px;
-    }
-}
-
-
-/* =================================================
-   IMPORTANT:
-   WHEN SPACE GETS TIGHT
-   HIDE ONLY MEITY TEXT
-   KEEP EMBLEM
-================================================= */
-/* =========================
-   TABLET / SMALL DESKTOP
-   951px - 1200px
-========================= */
-
-@media (min-width: 951px) and (max-width: 1200px) {
-
-    .navbar-container {
-        width: 92%;
-        gap: 10px;
-    }
-
-    .navbar-brand {
-        gap: 8px;
-        flex-shrink: 0;
-    }
-
-    .college-logo {
-        width: 85px;
-    }
-
-    .next-logo {
-        width: 72px;
-    }
-
-    .navbar-links {
-        gap: 10px;
-        flex-shrink: 1;
-    }
-
-    .navbar-links a {
-        font-size: 10px;
-        white-space: nowrap;
-    }
-
-    .meity-brand {
-        margin-left: 5px;
-        gap: 5px;
-        flex-shrink: 0;
-    }
-
-    .meity-emblem {
-        width: 32px;
-        height: 46px;
-    }
-
-    .meity-text span:first-child {
-        font-size: 9px;
-    }
-
-    .meity-text span:last-child {
-        font-size: 8px;
-    }
-}
-
-@media (max-width: 950px) {
-
-    .meity-text {
-        display: none;
-    }
-
-    .meity-brand {
-        margin-left: auto;
-    }
-
-    .meity-emblem {
-        width: 36px;
-        height: 50px;
-        display: block;
-    }
-
-    .navbar-links {
-        gap: 10px;
-    }
-
-    .navbar-links a {
-        font-size: 10px;
-    }
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 800px) {
-
-    .navbar-container {
-        height: 76px;
-
-        width: 94%;
-
-        gap: 10px;
-
-        justify-content: space-between;
-    }
-
-
-    /* KEEP BRAND ALWAYS VISIBLE */
-
-    .navbar-brand {
-        gap: 9px;
-
-        flex-shrink: 0;
-    }
-
-
-    /* COLLEGE LOGO */
-
-    .college-logo {
-        width: 78px;
-        height: 54px;
-
-        flex-shrink: 0;
-    }
-
-
-    /* DIVIDER */
-
-    .logo-divider {
-        height: 38px;
-
-        flex-shrink: 0;
-    }
-
-
-    /* N.E.X.T. ALWAYS VISIBLE */
-
-    .next-logo {
-        width: 72px;
-        height: 54px;
-
-        display: block;
-
-        flex-shrink: 0;
-    }
-
-
-    /* ALWAYS KEEP EMBLEM */
-
-    .meity-brand {
-        display: flex;
-
-        margin-left: auto;
-
-        flex-shrink: 0;
-    }
-
-
-    .meity-text {
-        display: none;
-    }
-
-
-    .meity-emblem {
-        display: block;
-
-        width: 34px;
-        height: 48px;
-
-        object-fit: contain;
-
-        flex-shrink: 0;
-    }
-
-
-    /* HAMBURGER */
-
-    .navbar-menu {
-        display: flex;
-
-        width: 44px;
-        height: 44px;
-
-        flex-shrink: 0;
-    }
-
-
-    /* MOBILE NAVIGATION */
+    /*
+       Switch to hamburger BEFORE the navbar
+       starts overflowing.
+    */
 
     .navbar-links {
         position: fixed;
 
-        top: 76px;
+        top: 90px;
         left: 0;
 
         width: 100%;
 
-        padding: 30px 6% 35px;
+        padding: 25px 7% 30px;
 
         display: flex;
 
@@ -589,11 +351,13 @@
 
         align-items: flex-start;
 
+        justify-content: flex-start;
+
         gap: 0;
 
         margin: 0;
 
-        background: rgba(255, 255, 255, 0.97);
+        background: rgba(255, 255, 255, 0.98);
 
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
@@ -601,7 +365,7 @@
         border-bottom: 1px solid rgba(41, 42, 45, 0.1);
 
         box-shadow:
-            0 15px 35px rgba(0, 0, 0, 0.08);
+            0 15px 40px rgba(0, 0, 0, 0.08);
 
         transform: translateY(-120%);
 
@@ -662,19 +426,128 @@
     .navbar-links a:hover {
         color: var(--next-gold);
     }
+
+
+    /* SHOW HAMBURGER */
+
+    .navbar-menu {
+        display: flex;
+    }
+
+
+    /* HIDE MINISTRY TEXT */
+
+    .meity-text {
+        display: none;
+    }
+
+
+    .meity-brand {
+        margin-left: auto;
+
+        display: flex;
+    }
+
+
+    .meity-emblem {
+        width: 34px;
+        height: 48px;
+    }
+
+
+    /* SMALLER BRAND */
+
+    .college-logo {
+        width: 92px;
+        height: 60px;
+    }
+
+
+    .next-logo {
+        width: 78px;
+        height: 60px;
+    }
+
+
+    .logo-divider {
+        height: 44px;
+    }
 }
 
 
-/* =========================
-   SMALL MOBILE
-========================= */
+/* =========================================================
+   TABLET
+   <= 900px
+========================================================= */
 
-@media (max-width: 480px) {
+@media (max-width: 900px) {
 
     .navbar-container {
-        width: 96%;
+        height: 76px;
 
-        gap: 6px;
+        width: 94%;
+
+        gap: 10px;
+    }
+
+
+    .navbar-links {
+        top: 76px;
+    }
+
+
+    .college-logo {
+        width: 80px;
+        height: 54px;
+    }
+
+
+    .next-logo {
+        width: 70px;
+        height: 54px;
+    }
+
+
+    .logo-divider {
+        height: 38px;
+    }
+
+
+    .meity-emblem {
+        width: 32px;
+        height: 45px;
+    }
+
+
+    .navbar-menu {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   <= 600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .navbar-container {
+        width: 94%;
+
+        height: 72px;
+
+        gap: 7px;
+    }
+
+
+    .navbar-links {
+        top: 72px;
+
+        padding:
+            20px 7%
+            25px;
     }
 
 
@@ -694,59 +567,85 @@
     }
 
 
-    /* N.E.X.T. CANNOT DISAPPEAR */
-
     .next-logo {
-        width: 65px;
+        width: 62px;
         height: 48px;
-
-        display: block;
-
-        flex-shrink: 0;
-    }
-
-
-    /* EMBLEM CANNOT DISAPPEAR */
-
-    .meity-brand {
-        display: flex;
-
-        margin-left: auto;
-
-        flex-shrink: 0;
     }
 
 
     .meity-emblem {
-        width: 31px;
-        height: 44px;
-
-        display: block;
-
-        flex-shrink: 0;
+        width: 29px;
+        height: 42px;
     }
 
 
     .navbar-menu {
-        width: 40px;
-        height: 40px;
+        width: 41px;
+        height: 41px;
     }
 
 
-    .navbar-links {
-        top: 76px;
-
-        padding-left: 7%;
-        padding-right: 7%;
+    .navbar-menu span {
+        width: 17px;
     }
 }
 
 
-/* =========================
-   VERY SMALL MOBILE
-========================= */
+/* =========================================================
+   SMALL MOBILE
+   <= 400px
+========================================================= */
 
-@media (max-width: 380px) {
+@media (max-width: 400px) {
+
+    .navbar-container {
+        width: 96%;
+
+        gap: 5px;
+    }
+
+
+    .navbar-brand {
+        gap: 4px;
+    }
+
+
+    .college-logo {
+        width: 60px;
+        height: 43px;
+    }
+
+
+    .logo-divider {
+        height: 28px;
+    }
+
+
+    .next-logo {
+        width: 54px;
+        height: 43px;
+    }
+
+
+    .meity-emblem {
+        width: 26px;
+        height: 38px;
+    }
+
+
+    .navbar-menu {
+        width: 39px;
+        height: 39px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   <= 340px
+========================================================= */
+
+@media (max-width: 340px) {
 
     .navbar-container {
         width: 97%;
@@ -755,78 +654,8 @@
     }
 
 
-    .navbar-brand {
-        gap: 4px;
-    }
-
-
     .college-logo {
-        width: 62px;
-        height: 44px;
-    }
-
-
-    .logo-divider {
-        height: 29px;
-    }
-
-
-    /* N.E.X.T. STILL PRESENT */
-
-    .next-logo {
-        width: 58px;
-        height: 44px;
-
-        display: block;
-
-        flex-shrink: 0;
-    }
-
-
-    /* EMBLEM STILL PRESENT */
-
-    .meity-emblem {
-        width: 28px;
-        height: 41px;
-
-        display: block;
-
-        flex-shrink: 0;
-    }
-
-
-    .navbar-menu {
-        width: 38px;
-        height: 38px;
-    }
-}
-
-
-/* =========================
-   EXTREMELY SMALL
-========================= */
-
-@media (max-width: 340px) {
-
-    /*
-       At this point we reduce sizes,
-       NOT hide the important logos.
-    */
-
-    .navbar-container {
-        width: 98%;
-
-        gap: 2px;
-    }
-
-
-    .navbar-brand {
-        gap: 3px;
-    }
-
-
-    .college-logo {
-        width: 56px;
+        width: 55px;
         height: 40px;
     }
 
@@ -837,23 +666,23 @@
 
 
     .next-logo {
-        width: 53px;
+        width: 50px;
         height: 40px;
-
-        display: block;
     }
 
 
-    .meity-emblem {
-        width: 25px;
-        height: 38px;
+    /*
+       At extremely small widths,
+       remove Ministry emblem to prevent overflow.
+    */
 
-        display: block;
+    .meity-brand {
+        display: none;
     }
 
 
     .navbar-menu {
-        width: 36px;
-        height: 36px;
+        width: 37px;
+        height: 37px;
     }
 }
