@@ -5,7 +5,7 @@ import "../Styles/Gallery.css";
 import gallery1 from "../Assets/Images/1.jpeg";
 import gallery2 from "../Assets/Images/2.jpeg";
 import gallery3 from "../Assets/Images/4.jpeg";
-import gallery4 from "../Assets/Images/3.jpeg";
+import gallery4 from "../Assets/Images/v.jpg";
 
 const galleryItems = [
   {
