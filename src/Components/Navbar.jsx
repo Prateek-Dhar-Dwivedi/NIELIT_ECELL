@@ -3,7 +3,6 @@ import { useState } from "react";
 
 import collegeLogo from "../Assets/logos/college-logo.png";
 import nextLogo from "../Assets/logos/next-logo.png";
-import meityEmblem from "../Assets/logos/meity-emblem.png";
 
 export default function Navbar() {
 
@@ -28,21 +27,12 @@ export default function Navbar() {
           className="navbar-brand"
           onClick={closeMenu}
         >
-
-          <img
-            src={collegeLogo}
-            alt="College Logo"
-            className="college-logo"
-          />
-
-          <div className="logo-divider"></div>
-
           <img
             src={nextLogo}
             alt="N.E.X.T. Logo"
             className="next-logo"
           />
-
+          <div className="logo-divider"></div>
         </a>
 
 
@@ -93,19 +83,15 @@ export default function Navbar() {
 
         </div>
 
-        <div className="meity-brand">
-          <div className="meity-text">
-            <span>Ministry of Electronics & Information Technology</span>
-            <span>Government of India</span>
-          </div>
-
+        <a href="#home" className="college-brand" onClick={closeMenu}>
+          <div className="logo-divider right-divider"></div>
           <img
-            src={meityEmblem}
-            alt="Government of India Emblem"
-            className="meity-emblem"
+            src={collegeLogo}
+            alt="College Logo"
+            className="college-logo"
           />
-        </div>
-        
+        </a>
+
         {/* =========================
             MOBILE MENU BUTTON
         ========================= */}

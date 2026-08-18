@@ -77,10 +77,19 @@
 .logo-divider {
     width: 1px;
     height: 48px;
-
     background: rgba(41, 42, 45, 0.25);
-
     flex-shrink: 0;
+}
+
+/* =========================
+   COLLEGE BRAND
+========================= */
+
+.college-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
 }
 
 
@@ -108,11 +117,11 @@
     display: flex;
 
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+    
+    gap: 45px;
 
-    gap: 30px;
-
-    margin-left: auto;
+    flex-grow: 1;
 
     flex-shrink: 1;
 
@@ -442,10 +451,8 @@
     }
 
 
-    .meity-brand {
+    .college-brand {
         margin-left: auto;
-
-        display: flex;
     }
 
 
