@@ -17,10 +17,11 @@
 }
 
 .gallery-title-row {
-  display: grid;
-  grid-template-columns: 1fr 0.4fr;
-  gap: 50px;
-  align-items: end;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: flex-end;
 }
 
 .gallery-title-row h2 {
@@ -192,9 +193,9 @@
   }
 
   .gallery-title-row {
-    grid-template-columns: 1fr;
-
-    gap: 25px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 
   .gallery-title-row p {
@@ -223,7 +224,7 @@
   }
 
   .gallery-title-row {
-    gap: 20px;
+    gap: 5px;
   }
 
   .gallery-title-row h2 {
@@ -234,7 +235,6 @@
 
   .gallery-title-row p {
     font-size: 14px;
-
     line-height: 1.7;
   }
 
